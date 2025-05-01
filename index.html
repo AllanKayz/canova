@@ -5,16 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Canova - Interior Design & Cabinetry</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <style>
+    /* Custom styling for smooth Apple-like effects */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+  </style>
 </head>
 <body class="bg-gray-100 text-gray-900">
 
   <!-- Hero Section -->
-  <section class="relative bg-cover bg-center h-screen" style="background-image: url('https://picsum.photos/1920/1080?random=1');">
+  <section id="hero" class="relative bg-cover bg-center h-screen" style="background-image: url('https://picsum.photos/1920/1080?random=1');">
     <div class="absolute inset-0 bg-black bg-opacity-50"></div>
     <div class="relative flex flex-col items-center justify-center h-full text-center text-white">
-      <h1 class="text-5xl font-bold uppercase tracking-wider">Canova</h1>
-      <p class="mt-4 text-lg">Crafting timeless interiors with precision and elegance.</p>
-      <a href="#services" class="mt-8 px-6 py-3 bg-white text-gray-900 font-semibold rounded-lg shadow-md hover:bg-gray-200">
+      <h1 class="text-5xl font-bold uppercase tracking-wider fade-in">Canova</h1>
+      <p class="mt-4 text-lg fade-in">Crafting timeless interiors with precision and elegance.</p>
+      <a href="#services" class="mt-8 px-6 py-3 bg-white text-gray-900 font-semibold rounded-lg shadow-md hover:bg-gray-200 fade-in">
         Explore Our Services
       </a>
     </div>
@@ -23,10 +31,10 @@
   <!-- About Us Section -->
   <section id="about" class="py-16 bg-white">
     <div class="container mx-auto px-6 lg:px-20">
-      <h2 class="text-3xl font-bold text-center mb-8">About Us</h2>
+      <h2 class="text-3xl font-bold text-center mb-8 fade-in">About Us</h2>
       <div class="flex flex-col lg:flex-row items-center gap-12">
-        <img src="https://picsum.photos/800/600?random=2" alt="About Canova" class="w-full lg:w-1/2 rounded-lg shadow-lg">
-        <div class="lg:w-1/2">
+        <img src="https://picsum.photos/800/600?random=2" alt="About Canova" class="w-full lg:w-1/2 rounded-lg shadow-lg fade-in">
+        <div class="lg:w-1/2 fade-in">
           <p class="text-lg leading-relaxed">
             At Canova, we specialize in creating bespoke interiors and cabinetry that blend functionality with aesthetic appeal.
             Our team of expert designers and artisans are dedicated to delivering unparalleled craftsmanship and customer satisfaction.
@@ -42,19 +50,19 @@
   <!-- Services Section -->
   <section id="services" class="py-16 bg-gray-100">
     <div class="container mx-auto px-6 lg:px-20">
-      <h2 class="text-3xl font-bold text-center mb-8">Our Services</h2>
+      <h2 class="text-3xl font-bold text-center mb-8 fade-in">Our Services</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-        <div class="text-center">
+        <div class="text-center fade-in">
           <img src="https://picsum.photos/100/100?random=3" alt="Interior Design" class="mx-auto w-20 mb-6">
           <h3 class="text-xl font-semibold">Interior Design</h3>
           <p class="mt-4 text-gray-600">Transforming spaces into works of art with custom designs tailored to your needs.</p>
         </div>
-        <div class="text-center">
+        <div class="text-center fade-in">
           <img src="https://picsum.photos/100/100?random=4" alt="Custom Cabinetry" class="mx-auto w-20 mb-6">
           <h3 class="text-xl font-semibold">Custom Cabinetry</h3>
           <p class="mt-4 text-gray-600">Precision-crafted cabinetry solutions for kitchens, bathrooms, and living spaces.</p>
         </div>
-        <div class="text-center">
+        <div class="text-center fade-in">
           <img src="https://picsum.photos/100/100?random=5" alt="Consultation" class="mx-auto w-20 mb-6">
           <h3 class="text-xl font-semibold">Consultation</h3>
           <p class="mt-4 text-gray-600">Work with our experts to plan and execute your dream interior.</p>
@@ -66,10 +74,28 @@
   <!-- Portfolio Section -->
   <section id="portfolio" class="py-16 bg-white">
     <div class="container mx-auto px-6 lg:px-20">
-      <h2 class="text-3xl font-bold text-center mb-8">Our Portfolio</h2>
+      <h2 class="text-3xl font-bold text-center mb-8 fade-in">Our Portfolio</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <img src="https://picsum.photos/400/300?random=6" alt="Project 1" class="rounded-lg shadow-lg hover:scale-105 transition-transform">
-        <img src="https://picsum.photos/400/300?random=7" alt="="w-full mt-6 px-4 py-3 bg-white border border-gray-300 rounded-lg"></textarea>
+        <img src="https://picsum.photos/400/300?random=6" alt="Project 1" class="rounded-lg shadow-lg hover:scale-105 fade-in transition-transform">
+        <img src="https://picsum.photos/400/300?random=7" alt="Project 2" class="rounded-lg shadow-lg hover:scale-105 fade-in transition-transform">
+        <img src="https://picsum.photos/400/300?random=8" alt="Project 3" class="rounded-lg shadow-lg hover:scale-105 fade-in transition-transform">
+        <img src="https://picsum.photos/400/300?random=9" alt="Project 4" class="rounded-lg shadow-lg hover:scale-105 fade-in transition-transform">
+        <img src="https://picsum.photos/400/300?random=10" alt="Project 5" class="rounded-lg shadow-lg hover:scale-105 fade-in transition-transform">
+        <img src="https://picsum.photos/400/300?random=11" alt="Project 6" class="rounded-lg shadow-lg hover:scale-105 fade-in transition-transform">
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 bg-gray-100">
+    <div class="container mx-auto px-6 lg:px-20">
+      <h2 class="text-3xl font-bold text-center mb-8 fade-in">Get in Touch</h2>
+      <form class="max-w-3xl mx-auto fade-in">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <input type="text" placeholder="Your Name" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg">
+          <input type="email" placeholder="Your Email" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg">
+        </div>
+        <textarea placeholder="Your Message" class="w-full mt-6 px-4 py-3 bg-white border border-gray-300 rounded-lg"></textarea>
         <button type="submit" class="mt-6 px-6 py-3 bg-gray-900 text-white font-semibold rounded-lg shadow-md hover:bg-gray-700">
           Send Message
         </button>
@@ -79,7 +105,7 @@
 
   <!-- Footer -->
   <footer class="py-6 bg-gray-900 text-white">
-    <div class="container mx-auto px-6 lg:px-20 flex flex-col md:flex-row justify-between items-center">
+    <div class="container mx-auto px-6 lg:px-20 flex flex-col md:flex-row justify-between items-center fade-in">
       <p>&copy; 2025 Canova. All rights reserved.</p>
       <div class="flex space-x-4">
         <a href="#" class="hover:text-gray-400">Facebook</a>
@@ -88,6 +114,21 @@
       </div>
     </div>
   </footer>
+
+  <!-- Anime.js Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Apply fade-in animations
+      anime({
+        targets: '.fade-in',
+        opacity: [0, 1],
+        translateY: [30, 0],
+        easing: 'easeOutExpo',
+        duration: 1000,
+        delay: anime.stagger(200) // Adds a delay between elements
+      });
+    });
+  </script>
 
 </body>
 </html>
