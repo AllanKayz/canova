@@ -7,7 +7,14 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   <style>
-    /* Custom styling for smooth Apple-like effects */
+    /* Glassy Effect Styles */
+    .glass {
+      background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+      backdrop-filter: blur(10px); /* Frosted glass effect */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+      border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+    }
+
     .fade-in {
       opacity: 0;
       transform: translateY(30px);
@@ -17,44 +24,45 @@
 <body class="bg-gray-100 text-gray-900">
 
   <!-- Header/Toolbar -->
-  <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+  <header class="glass fixed top-0 left-0 w-full z-50">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
       <a href="#hero" class="text-2xl font-bold text-gray-900">Canova</a>
       <nav class="hidden md:flex space-x-6">
-        <a href="#about" class="text-gray-600 hover:text-gray-900">About</a>
-        <a href="#services" class="text-gray-600 hover:text-gray-900">Services</a>
-        <a href="#portfolio" class="text-gray-600 hover:text-gray-900">Portfolio</a>
-        <a href="#contact" class="text-gray-600 hover:text-gray-900">Contact</a>
+        <a href="#about" class="text-gray-700 hover:text-gray-900">About</a>
+        <a href="#services" class="text-gray-700 hover:text-gray-900">Services</a>
+        <a href="#portfolio" class="text-gray-700 hover:text-gray-900">Portfolio</a>
+        <a href="#contact" class="text-gray-700 hover:text-gray-900">Contact</a>
       </nav>
-      <button id="menu-btn" class="md:hidden text-gray-600 focus:outline-none">
+      <button id="menu-btn" class="md:hidden text-gray-700 focus:outline-none">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
         </svg>
       </button>
     </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
-      <a href="#about" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">About</a>
-      <a href="#services" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Services</a>
-      <a href="#portfolio" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Portfolio</a>
-      <a href="#contact" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Contact</a>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden glass px-6 py-4">
+      <a href="#about" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">About</a>
+      <a href="#services" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Services</a>
+      <a href="#portfolio" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Portfolio</a>
+      <a href="#contact" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contact</a>
     </div>
   </header>
 
   <!-- Hero Section -->
   <section id="hero" class="relative bg-cover bg-center h-screen" style="background-image: url('https://picsum.photos/1920/1080?random=1');">
-    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    <div class="absolute inset-0 glass"></div>
     <div class="relative flex flex-col items-center justify-center h-full text-center text-white">
       <h1 class="text-5xl font-bold uppercase tracking-wider fade-in">Canova</h1>
       <p class="mt-4 text-lg fade-in">Crafting timeless interiors with precision and elegance.</p>
-      <a href="#services" class="mt-8 px-6 py-3 bg-white text-gray-900 font-semibold rounded-lg shadow-md hover:bg-gray-200 fade-in">
+      <a href="#services" class="mt-8 px-6 py-3 bg-white bg-opacity-80 text-gray-900 font-semibold rounded-lg shadow-md hover:bg-opacity-100 fade-in">
         Explore Our Services
       </a>
     </div>
   </section>
 
   <!-- About Us Section -->
-  <section id="about" class="py-16 bg-white">
-    <div class="container mx-auto px-6 lg:px-20">
+  <section id="about" class="py-16 glass">
+    <div class="container mx-auto px-6 lg:px-20 text-gray-800">
       <h2 class="text-3xl font-bold text-center mb-8 fade-in">About Us</h2>
       <div class="flex flex-col lg:flex-row items-center gap-12">
         <img src="https://picsum.photos/800/600?random=2" alt="About Canova" class="w-full lg:w-1/2 rounded-lg shadow-lg fade-in">
@@ -72,83 +80,50 @@
   </section>
 
   <!-- Services Section -->
-<section id="services" class="py-16 bg-gray-100">
-  <div class="container mx-auto px-6 lg:px-20">
-    <h2 class="text-3xl font-bold text-center mb-12 fade-in">Our Services</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-      <!-- Card 1 -->
-      <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 fade-in">
-        <img src="https://picsum.photos/400/300?random=1" alt="Interior Design" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <h3 class="text-xl font-semibold mb-4 text-gray-800">Interior Design</h3>
-          <p class="text-gray-600">Transforming spaces into works of art with custom designs tailored to your needs.</p>
-        </div>
-      </div>
-      <!-- Card 2 -->
-      <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 fade-in">
-        <img src="https://picsum.photos/400/300?random=2" alt="Custom Cabinetry" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <h3 class="text-xl font-semibold mb-4 text-gray-800">Custom Cabinetry</h3>
-          <p class="text-gray-600">Precision-crafted cabinetry solutions for kitchens, bathrooms, and living spaces.</p>
-        </div>
-      </div>
-      <!-- Card 3 -->
-      <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 fade-in">
-        <img src="https://picsum.photos/400/300?random=3" alt="Consultation" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <h3 class="text-xl font-semibold mb-4 text-gray-800">Consultation</h3>
-          <p class="text-gray-600">Work with our experts to plan and execute your dream interior.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <!-- Portfolio Section -->
-  <section id="portfolio" class="py-16 bg-white">
+  <section id="services" class="py-16 glass">
     <div class="container mx-auto px-6 lg:px-20">
-      <h2 class="text-3xl font-bold text-center mb-8 fade-in">Our Portfolio</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <img src="https://picsum.photos/400/300?random=6" alt="Project 1" class="rounded-lg shadow-lg hover:scale-105 fade-in transition-transform">
-        <img src="https://picsum.photos/400/300?random=7" alt="Project 2" class="rounded-lg shadow-lg hover:scale-105 fade-in transition-transform">
-        <img src="https://picsum.photos/400/300?random=8" alt="Project 3" class="rounded-lg shadow-lg hover:scale-105 fade-in transition-transform">
-        <img src="https://picsum.photos/400/300?random=9" alt="Project 4" class="rounded-lg shadow-lg hover:scale-105 fade-in transition-transform">
-        <img src="https://picsum.photos/400/300?random=10" alt="Project 5" class="rounded-lg shadow-lg hover:scale-105 fade-in transition-transform">
-        <img src="https://picsum.photos/400/300?random=11" alt="Project 6" class="rounded-lg shadow-lg hover:scale-105 fade-in transition-transform">
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="py-16 bg-gray-100">
-    <div class="container mx-auto px-6 lg:px-20">
-      <h2 class="text-3xl font-bold text-center mb-8 fade-in">Get in Touch</h2>
-      <form class="max-w-3xl mx-auto fade-in">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <input type="text" placeholder="Your Name" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg">
-          <input type="email" placeholder="Your Email" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg">
+      <h2 class="text-3xl font-bold text-center mb-12 fade-in">Our Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <!-- Card 1 -->
+        <div class="glass shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 fade-in">
+          <img src="https://picsum.photos/400/300?random=3" alt="Interior Design" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-4 text-gray-800">Interior Design</h3>
+            <p class="text-gray-700">Transforming spaces into works of art with custom designs tailored to your needs.</p>
+          </div>
         </div>
-        <textarea placeholder="Your Message" class="w-full mt-6 px-4 py-3 bg-white border border-gray-300 rounded-lg"></textarea>
-        <button type="submit" class="mt-6 px-6 py-3 bg-gray-900 text-white font-semibold rounded-lg shadow-md hover:bg-gray-700">
-          Send Message
-        </button>
-      </form>
+        <!-- Card 2 -->
+        <div class="glass shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 fade-in">
+          <img src="https://picsum.photos/400/300?random=4" alt="Custom Cabinetry" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-4 text-gray-800">Custom Cabinetry</h3>
+            <p class="text-gray-700">Precision-crafted cabinetry solutions for kitchens, bathrooms, and living spaces.</p>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="glass shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 fade-in">
+          <img src="https://picsum.photos/400/300?random=5" alt="Consultation" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-4 text-gray-800">Consultation</h3>
+            <p class="text-gray-700">Work with our experts to plan and execute your dream interior.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="py-6 bg-gray-900 text-white">
-    <div class="container mx-auto px-6 lg:px-20 flex flex-col md:flex-row justify-between items-center fade-in">
-      <p>&copy; 2025 Canova. All rights reserved.</p>
+  <footer class="py-6 glass">
+    <div class="container mx-auto px-6 lg:px-20 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-gray-800">&copy; 2025 Canova. All rights reserved.</p>
       <div class="flex space-x-4">
-        <a href="#" class="hover:text-gray-400">Facebook</a>
-        <a href="#" class="hover:text-gray-400">Instagram</a>
-        <a href="#" class="hover:text-gray-400">LinkedIn</a>
+        <a href="#" class="hover:text-gray-500">Facebook</a>
+        <a href="#" class="hover:text-gray-500">Instagram</a>
+        <a href="#" class="hover:text-gray-500">LinkedIn</a>
       </div>
     </div>
   </footer>
 
-  <!-- Anime.js Script -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       // Apply fade-in animations
